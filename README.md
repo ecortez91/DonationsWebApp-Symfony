@@ -2,17 +2,17 @@
 **A simple yet powerful WebApp built using (Symfony 4 (PHP7) / Bootstrap 4 / jQuery / MySQL / Stripe JS)**
 
 **Summary**
-This is a WebApp designed to be simple yet powerful, as we know, in this day and age we need to come up with simple solutions for complex problems and that was my approach, in this Donation WebApp, you'll be able to send a donation in just 2 clicks after logging in, you just go to "New Donation" -> "Send Donation".
+This is a WebApp designed to be simple yet powerful. As we know, in this day and age we need to come up with simple solutions for complex problems and that was my approach, in this Donation WebApp, you'll be able to send a donation in just 2 clicks after logging in, you just go to "New Donation" -> "Send Donation" (I'm using a REAL credit card processor btw).
 
-This is also built using Stripe JS (made by Stripe, one of the biggest --if not the biggest-- payment processor in the world!) and we are even doing test payment transactions to my sandbox account in Stripe!
+This is also built using Stripe JS (made by Stripe, one of the biggest --if not the biggest-- payment processor in the world!) and I'm even doing test payment transactions to my sandbox account in Stripe!
 
-We are storing only the last 4 digits of the credit cards entered for security reasons, and it's important to mention that due to the PCI Compliance it is NOT advised to store the CVV, and you guessed it, we are not storing it!
+I'm storing only the last 4 digits of the credit cards entered for security reasons, and it's important to mention that due to the PCI Compliance it is NOT advised to store the CVV, and you guessed it, I'm not storing it!
 
-There is a nice trend right now with WebApps focusing on minimalistic design, fun and pretty icons, simplicity, high-performance and using powerful frameworks, in this case, we are using Symfony 4, which is just... Awesome.
+There is a nice trend going on right now with WebApps focusing on minimalistic design, fun/cute icons, simplicity, high-performance and using powerful frameworks, in this case, I'm using Symfony 4, which is just... Awesome.
 
-Also, I've built a REST API that expects a get request and returns objects in JSON format that represent all the donations made. I've added an example using an AJAX call in order to show the JSON information obtained from this Webservice.
+I've built a REST API here that expects a get request and returns a JSON object that contains all the donations that have been made until then. I've added an example using an AJAX showing how to call it in order to obtajin the JSON structure from this Webservice.
 
-There is also a log function there, that stores in a .txt the IP and DateTime of all users after when trying to log-in (doesn't matter if it's successful or not)
+There is also a log function there, it stores in a .txt the IP and DateTime of all users that try to log-in (I'm storing everyone, people that authenticate correctly and people that don't; in order to keep track of things). 
 
 **Built with**
 * PHP 7
@@ -34,14 +34,36 @@ There is also a log function there, that stores in a .txt the IP and DateTime of
 * Enjoy the WebApp! (Tested in Firefox)
 
 ********************************
-**Country accounts**
+**Logins**
 
+Country accounts:
 * elsalvador@gov.com.sv / Test123
 * donations@gov.us / Test123
 
 User accounts:
-* eduardo@cortez.solutions / 0000
-* You can create one (or as many as you want)!
+* douglas@telus.com / Test456
+* You can create one (or as many as you want! Remember that the "username" is ALWAYS the email).
+
+**Test Credit Cards:**
+MasterCard
+* 5555 5555 5555 4444
+* 5105 1051 0510 5100
+
+Visa
+* 4111 1111 1111 1111
+* 4012 8888 8888 1881
+
+
+JCB
+* 3530 1113 3330 0000
+* 3566 0020 2036 0505
+
+CVC
+* 123 
+
+ZIP
+* Random numbers are fine.
+
 
 ********************************
 
@@ -67,19 +89,18 @@ User accounts:
 ********************************
 
 **Conclusion**
-This is a great project for anyone looking to learn the MVC design patter or for someone that wants to get familiar with Symfony, strong PHP knowledge is a MUST! Let's remember that this was done in less than 48 hours, I'm pretty happy with the result. Had a lot of fun for sure! 
+This is a great project for anyone looking to learn the MVC design patter or for someone that wants to get familiar with Symfony, strong PHP knowledge is a MUST! Let's remember that this was done in less than 48 hours, I'm pretty happy with the results. Had a lot of fun for sure!
 
 **What can we do to expand this WebApp?**
-There's definitely some work to do here if we want to build a robust WebApp, so far we have a nice structure using the MVC design pattern that we can keep using in order to keep things organized, here are some thoughts that I have in order to improve and extend this WebApp:
+There's definitely some work to do here if we want to build a robust Donation WebApp, so far we have a nice architecture using the MVC design pattern, and we can keep using in order to keep things organized, here are some thoughts that I have in order to improve and extend this WebApp:
 
-1) Profile section -> I was going to do this but ran out of time, it would be nice to have a profile showing detailed information related to my donations, we can even add some graphics and see in which categories we donate more, brings me to the next point.
-2) Categories -> It would be nice to add categories here, that way we can keep track of what types of foundations or institutions are being helped more or less.
-3) Newsfeed using the observer pattern -> I was thinking about doing like a newsfeed similar to Instagram where you can click any organization or institution that you may have not heard about before and start helping them!
-4) Add users with the flag "is_country" on so we can add "Country Users" using the web app, but it would be better to just add the "roles" logic.
-5) Email notification and validation
-6) Password recovery option
+1) Profile section -> I was going to do this but ran out of time, it would be nice to have a profile showing allowing members to view/edit their personal information, store their CC, add recurrent payments, also we can show detailed information related to "my donations", we can even add some graphics to see in which categories we donate more, which brings me to the next point.
+2) Categories -> It would be nice to add categories here, that can be fairly simple, just add a table and link the institutions to the category, that way we can keep track of what kind of foundations or institutions are being helped more or less (by person or everyone).
+3) Newsfeed -> Using the observer design pattern -> I was thinking about doing like a newsfeed similar to Instagram where you can click any organization or institution that you may have not heard about before and start helping them! While scrolling down you can discover a nice foundation or institution that sounds good for you, then you can start sending donations right away!
+4) Roles -> Add users with the flag "is_country" activated (aka "Country Users") using the WebApp, but on a second thought I decided that it would be better to just add the "roles" logic into the system. That can be a better route for sure. I provide 2 "Country Users" (that represent a country) as an example but you can turn a "Normal user" into a "Country user" just by setting to "true" the "is_country" field in the database (table = "t_user")
+5) Emails -> Notifications, email validation & password recovery option.
 
-I'll be adding more stuff that would be cool to have! 
+I hope you enjoy this cool WebApp! :)
 
 
 -Eduardo Miguel Cortez
