@@ -35,17 +35,19 @@ Installation steps:
 
 ********************************
 Country accounts:
-elsalvador@gov.com.sv / Test123
-donations@gov.us / Test123
+* elsalvador@gov.com.sv / Test123
+* donations@gov.us / Test123
 
 User accounts:
-eduardo@cortez.solutions / 0000
-And you also can create one!
+* eduardo@cortez.solutions / 0000
+* You can create one (or as many as you want)!
 ********************************
 
-What can we do to expand this WebApp?
-To start, let's remember that this was done in less than 48 hours, I'm pretty happy with the result. Had a lot of fun for sure!
-But there's definitely some work to do here if we want to build a powerful WebApp, but so far we have a nice structure using the MVC design pattern.
+**Conclusion**
+This is a great project for anyone looking to learn the MVC design patter or for someone that wants to get familiar with Symfony, strong PHP knowledge is a MUST! Let's remember that this was done in less than 48 hours, I'm pretty happy with the result. Had a lot of fun for sure! 
+
+**What can we do to expand this WebApp?**
+There's definitely some work to do here if we want to build a robust WebApp, so far we have a nice structure using the MVC design pattern that we can keep using in order to keep things organized, here are some thoughts that I have in order to improve and extend this WebApp:
 
 1) Profile section -> I was going to do this but ran out of time, it would be nice to have a profile showing detailed information related to my donations, we can even add some graphics and see in which categories we donate more, brings me to the next point.
 2) Categories -> It would be nice to add categories here, that way we can keep track of what types of foundations or institutions are being helped more or less.
@@ -55,3 +57,6 @@ But there's definitely some work to do here if we want to build a powerful WebAp
 6) Password recovery option
 
 I'll be adding more stuff that would be cool to have! 
+
+
+-Eduardo Miguel Cortez
