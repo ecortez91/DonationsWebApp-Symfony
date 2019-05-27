@@ -1,5 +1,5 @@
 # DonationsWebApp-Symfony
-## A simple yet powerful WebApp built using (Symfony 4 / Bootstrap 4 / jQuery / MySQL / Stripe JS)
+## A simple yet powerful WebApp built using Symfony 4 (with PHP 7), Bootstrap 4, jQuery, MySQL & Stripe JS.
 
 ### Summary
 This is a WebApp designed to be simple yet powerful. As we know, in this day and age we need to come up with simple solutions for complex problems and that was my approach, in this Donation WebApp, you'll be able to send a donation in just 2 clicks after logging in, you just go to "New Donation" -> "Send Donation" (I'm using a REAL credit card processor btw).
