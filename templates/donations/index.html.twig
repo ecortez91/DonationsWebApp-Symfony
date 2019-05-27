@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Donations{% endblock %}
+
+{% block body %}
+<script>
+$(document).ready(function() {
+    $("#btnAjax").click(function(){
+        $.ajax({
+        url:"/api/donations",  
+        success:function(data) {
+            $('#json_container').val(JSON.stringify(data)); 
+    
+        }
+    });
+  }); 
+    $('#sayHello').fadeIn('slow');
+});
+</script><br>
+<div id="sayHello" style="display: none; zIndex: 1000000; position: absolute"><span class="alert alert-success">Hello <b>{{ fullname }}!</b> We are so glad that you are here!
+</span></div>
+<hr />
+<br>
+<h2>Your donations</h2>
+<br>
+{% if donations %}
+    <table id="donations" class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Donation ID</th>
+            <th>Donation Date</th>
+            <th>Institution</th>
+            <th>Amount (USD)</th>
+            <th>CC Number</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for donation in donations %}
+         <tr>
+             <td> {{ donation.donationId }} </td>
+             <td> {{ donation.donationDate }} </td>
+             <td> {{ donation.institution }} </td>
+             <td> $ {{ donation.amount|number_format(2, '.', ',') }} </td>
+             <td> **** **** **** {{ donation.CcNumber }} </td>
+             <td>
+            <!--I really love fontawesome, those fast-loading icons are PERFECT for any website.
+            Lately I've been using them a lot, even you guys saw those icons in the interview where I showed you guys my website https://cortez.solutions 
+            -->
+            {% if donation.ccType == 'Vi' %}
+                <i class="fab fa-cc-visa fa-2x"></i>
+            {% elseif donation.cctype == 'Ma' %}
+                <i class="fab fa-cc-mastercard fa-2x"></i>
+            {% else  %}
+                <i class="far fa-credit-card fa-2x"></i>
+            {% endif %}
+             </td>
+         </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% else %}
+    <p>No donations to display</p>
+{% endif %}
+<br>
+<br>
+{% if message %}
+  <div class="alert alert-info alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      {{ message }}
+  </div>
+{% endif %}
+<hr />
+<br>
+<br>
+{% if txtFile %}
+<h2>Logs</h2>
+<br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalToday">
+   View today's log 
+</button>
+<!-- Modal -->
+<div class="modal fade" id="modalToday" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">You are viewing today's log (log-{{ date }}.txt)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea class="form-control" style="height:350px;">{{ txtFile }}</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% if txtFileFull %}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFull">
+   View full log 
+</button>
+<div class="modal fade" id="modalFull" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">You are viewing the full log (full_log.txt)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea class="form-control" style="height:350px;">{{ txtFileFull }}</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+<button type="button" class="btn btn-primary" data-toggle="modal" id="btnAjax" data-target="#modalRestAPI">View all donations!</button>
+<div class="modal fade" id="modalRestAPI" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">You are calling out REST API!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        After calling our REST API using AJAX, we can quickly load ALL the donations into the TextArea in JSON format.
+        <!-- Yes, I wrote this, this is not a copy paste, I love writting friendly messages when necessary. Are you enjoying my Symfony 4 WebApp?--> 
+        <br>
+        <br>
+        <textarea class="form-control" style="height:350px;" id="json_container"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+<div class="container">
+    <a href="/" class="navbar-brand">Cortez Donations <i class="fas fa-hand-holding-usd fa-2x"></i></a><br>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
+       <span class="navbar-toggle-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mobile-nav">
+    <ul class="navbar-nav ml-auto">
+    
+        <li class="nav-item"><a href="#" class="nav-link" data-toggle="tooltip" title="Profile coming soon!"><i class="fas fa-user-alt"></i> Profile</a></li>
+        <li class="nav-item"><a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+        <li class="nav-item"><a href="/donation/new" class="nav-link"><i class="fas fa-paper-plane"></i> New Donation</a></li>
+        <li class="nav-item"><a href="{{ path('logout') }}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+    </div>
+</div>
+</nav>

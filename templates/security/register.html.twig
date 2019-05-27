@@ -1,0 +1,120 @@
+{% extends 'login_base.html.twig' %}
+
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .error {color:red}
+</style>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://raw.githubusercontent.com/bnabriss/jquery-form-validation/master/dist/jquery.form-validation.min.js"></script>
+
+<script>
+  $( function() {
+    $( ".datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "c-80:c+0",
+      dateFormat: 'yy-mm-dd',
+      constrainInput: false
+    });
+
+
+$('#form_birthdate').keypress(function() {
+  return false;
+});
+
+
+$('form').on('submit',function(){
+   if($('#form_password').val()!=$('#form_password2').val()){
+       $('#modalBtn').click();
+       return false;
+   }
+   return true;
+});
+
+  } );
+</script>
+<div class="example-wrapper">
+{{ form_start(form) }}
+{% if message %}
+   <span class="alert alert-danger">{{ message }} </span><br><br>
+{% endif %}
+<h1>Welcome!</h1>
+    <label>
+    {{ form_widget(form.id_number, { 'attr': {"minlength":"4",  "maxlength":"20"} }) }}
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+    {{ form_widget(form.email, { 'attr': {"minlength":"4",  "maxlength":"80"} }) }}
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+    {{ form_widget(form.first_name , { 'attr': {"minlength":"6",  "maxlength":"20"} }) }}
+        <div class="line-box">
+            <div class="line"></div>
+         </div>
+    </label>
+    <label>
+    {{ form_widget(form.last_name , { 'attr': {"minlength":"2",  "maxlength":"25"} }) }}
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+    {{ form_widget(form.birthdate) }}
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+    {{ form_widget(form.password , { 'attr': {"minlength":"6",  "maxlength":"20"} }) }}
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+    {{ form_widget(form.password2) }}
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+
+{{ form_rest(form) }}
+{{ form_end(form) }}
+</div>
+
+
+
+<button type="button" id="modalBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="display:none">
+  Launch demo modal
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Password error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Please enter the same password in both fields. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

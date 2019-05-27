@@ -1,0 +1,39 @@
+{% extends 'login_base.html.twig' %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .error {color:red}
+</style>
+
+<div class="example-wrapper">
+    <form action="{{ path('login') }}" method="POST" name="form">
+    {% if error %}
+        <span class="alert alert-danger">{{ error.messageKey }}</span><br><br>
+    {% endif %}
+    {% if message %}
+        <span class="alert alert-success">{{ message }} ✅</span><br><br>
+    {% endif %}
+    <h1>Login </h1>  
+    <label>
+        <input type="text" name = "_username" value = "{% if last_username %} {{ last_username }} {% endif %}" class="input" placeholder="Login" id="form_username" minlength="1" maxlength="80">
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+        <input type="password" name = "_password" placeholder="Password" class="input">
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+        <button type = "submit">Login</button>
+    </label>
+    <label>
+        You don't have an account? <a href="{{ path('register') }}">Click here to create one!</a>
+    </label>
+    </form>
+</div>
+{% endblock %}
