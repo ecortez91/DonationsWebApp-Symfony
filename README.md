@@ -1,7 +1,7 @@
 # DonationsWebApp-Symfony
 **A simple yet powerful WebApp built using (Symfony 4 (PHP7) / Bootstrap 4 / jQuery / MySQL / Stripe JS)**
 
-Summary:
+**Summary**
 This is a WebApp designed to be simple yet powerful, as we know, in this day and age we need to come up with simple solutions for complex problems and that was my approach, in this Donation WebApp, you'll be able to send a donation in just 2 clicks after logging in, you just go to "New Donation" -> "Send Donation".
 
 This is also built using Stripe JS (made by Stripe, one of the biggest --if not the biggest-- payment processor in the world!) and we are even doing test payment transactions to my sandbox account in Stripe!
@@ -14,7 +14,7 @@ Also, I've built a REST API that expects a get request and returns objects in JS
 
 There is also a log function there, that stores in a .txt the IP and DateTime of all users after when trying to log-in (doesn't matter if it's successful or not)
 
-Built with:
+**Built with**
 * PHP 7
 * Stripe JS
 * Bootstrap 4.3.1
@@ -23,7 +23,7 @@ Built with:
 * MySQL 10.1.40-MariaDB
 
 ********************************
-Installation steps:
+**Installation steps**
 
 * Download this repository from the branch "Alpha"
 * Start Apache and MySQL in Xampp
@@ -34,13 +34,36 @@ Installation steps:
 * Enjoy the WebApp! (Tested in Firefox)
 
 ********************************
-Country accounts:
+**Country accounts**
+
 * elsalvador@gov.com.sv / Test123
 * donations@gov.us / Test123
 
 User accounts:
 * eduardo@cortez.solutions / 0000
 * You can create one (or as many as you want)!
+
+********************************
+
+**ER Diagram**
+
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Database%20Files/ER%20Diagram/ER-Diagram%20-%20Cortez%20Donations.png)
+
+
+********************************
+
+**Screenshots**
+
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/LoginPage.png)
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/RegisterPage.png)
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/DonationPage.png)
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/MainPage%20-%20CountryUser.png)
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/MainPage%20-%20User.png)
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/Today's%20log%20button.png)
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/Full%20log%20button.png)
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/View%20all%20donations%20button.png)
+
+
 ********************************
 
 **Conclusion**
