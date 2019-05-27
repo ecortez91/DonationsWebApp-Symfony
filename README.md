@@ -117,7 +117,7 @@ There is also a log function in the SecurityController, it stores in a .txt the 
 
 ### Conclusion
 
-This is a great project for anyone looking to learn the MVC design pattern or for someone that wants to get familiar with Symfony, strong PHP knowledge is a MUST! Let's remember that this was done in less than 48 hours, I'm pretty happy with the results. Had a lot of fun for sure!
+This is a great project for anyone looking to learn the MVC design pattern or for someone that wants to get familiar with Symfony, strong PHP knowledge is a MUST! Let's remember that this was done in less than 2 days, I'm pretty happy with the results. Had a lot of fun for sure!
 
 
 ********************************
