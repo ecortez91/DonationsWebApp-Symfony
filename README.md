@@ -25,7 +25,7 @@ There is also a log function there, that stores in a .txt the IP and DateTime of
 ********************************
 **Installation steps**
 
-* Download this repository from the branch "Alpha"
+* Download this repository from here -> https://github.com/ecortez91/DonationsWebApp-Symfony/tree/alpha
 * Start Apache and MySQL in Xampp
 * Go to phpmyadmin and create an empty database named: telusapp
 * Import the .sql script (I would suggest using phpmyadmin to upload the script)
