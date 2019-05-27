@@ -33,6 +33,7 @@ There is also a log function there, it stores in a .txt the IP and DateTime of a
 * Start Apache and MySQL in Xampp
 * Go to phpmyadmin and create an empty database named: telusapp
 * Import the .sql script (I would suggest using phpmyadmin to upload the script)
+* Update .env if needed and set your DB info
 * Run Symfony 4 -> *symfony server:start*
 * Go to http://127.0.0.1:8000/ (localhost or whatever your local server URL is, virtual hosts rock btw!)
 * Enjoy the WebApp! (Working 100% in Firefox)
