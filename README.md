@@ -114,6 +114,12 @@ There's definitely some work to do here if we want to build a robust Donation We
 4) **Roles ->** Add users with the flag "is_country" activated (aka "Country Users") using the WebApp, but on a second thought I decided that it would be better to just add the "roles" logic into the system. That can be a better route for sure. I provide 2 "Country Users" (that represent a country) as an example but you can turn a "Normal user" into a "Country user" just by setting to "true" the "is_country" field in the database (table = "t_user")
 5) **Emails ->** Notifications, email validation & password recovery option.
 
+*************************************
+
+### Notes
+* "Country Users" have more rights than "Normal Users"
+* "Country Users" can only make one donation per month (for testing purposes you can update t_donation.donation_date in the datbase)
+
 I hope you enjoy this cool WebApp! :)
 
 
