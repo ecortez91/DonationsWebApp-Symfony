@@ -83,16 +83,34 @@ There is also a log function in the SecurityController, it stores in a .txt the 
 
 ********************************
 
-### Screenshots
+## Screenshots
 
+### Login
 ![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/LoginPage.png)
+
+### Registration 
 ![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/RegisterPage.png)
+
+### Make a donation
 ![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/DonationPage.png)
+
+### Main page for "Country User"
 ![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/MainPage%20-%20CountryUser.png)
+
+### Main page for "Normal User"
 ![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/MainPage%20-%20User.png)
+
+### Viewing today's log in a Bootstrap Modal
 ![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/Today's%20log%20button.png)
+
+### Viewing full log in a Bootstrap Modal
 ![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/Full%20log%20button.png)
+
+### AJAX Call button to RESP API
 ![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/View%20all%20donations%20button.png)
+
+### Testing REST API (/api/donations) using WizTools REST Client
+![alt text](https://github.com/ecortez91/DonationsWebApp-Symfony/blob/alpha/Documentation/Screenshots/REST%20API%20Test.png)
 
 
 ********************************
